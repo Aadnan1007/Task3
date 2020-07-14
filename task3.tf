@@ -1,8 +1,8 @@
 provider "aws" {
     region ="ap-south-1"
     profile = "adnanshk"
-    access_key = "AKIA3BKELRLOMAL2TQ4H"
-    secret_key = "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"
+    access_key = "$EnterAccessKey"
+    secret_key = "$EnterSecretKey"
   
 }
 resource "aws_vpc" "adnanskvpc" {
@@ -116,7 +116,7 @@ resource "aws_instance" "WordPress" {
     instance_type = "t2.micro"
     associate_public_ip_address = true
     subnet_id = "subnet-0233c429c1301ff17"
-    key_name = "adnan1818"
+    key_name = "$EnterYourKey"
     vpc_security_group_ids = [ "sg-02faee22b1fc8ca7b"  ]
     tags = {
         Name = "WordPressServer"
@@ -128,7 +128,7 @@ resource "aws_instance" "mysql_inst" {
     instance_type = "t2.micro"
     associate_public_ip_address = true
     subnet_id = "subnet-0a7b98909c6d6f77f"
-    key_name = "adnan1818"
+    key_name = "$EnterYorKey"
     vpc_security_group_ids = [ "sg-037537e169f4937fa" ]
     tags = {
         Name = "WordPressDB"
